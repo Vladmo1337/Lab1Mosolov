@@ -1,12 +1,15 @@
 import { ApolloProvider } from '@apollo/client';
-import { WelcomeScreen } from './screens/WelcomeScreen';
-
+import { ConfigProvider } from 'antd-mobile';
+import enUS from 'antd-mobile/es/locales/en-US'
 import { apolloClient } from './services/ApolloClient';
+import { Nav } from "./components/Navigator"
 
 export default function App() {
   return (
     <ApolloProvider client={apolloClient}>
-      <WelcomeScreen />
+      <ConfigProvider locale={enUS}>
+        <Nav/>
+      </ConfigProvider>
     </ApolloProvider>
   )
 }
